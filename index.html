@@ -746,7 +746,21 @@
             </div>
         </div>
     </div>
+ <script>
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
+        // Ambil parameter 'to' dari URL
+        const namaTamu = getParameterByName('to');
+
+        // Jika 'to' ada di URL, tampilkan nama tamu
+        if (namaTamu) {
+            document.getElementById('namaTamu').textContent = decodeURIComponent(namaTamu);
+        }
+    </script>
 </body>
 
 </html>
