@@ -746,6 +746,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Fungsi untuk mendapatkan parameter dari URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Ambil parameter 'nama' dari URL
+        const namaTamu = getParameterByName('nama');
+
+        // Jika 'nama' ada di URL, tampilkan pesan selamat datang
+        if (namaTamu) {
+            const welcomeMessage = document.getElementById('welcome-message');
+            welcomeMessage.textContent = `Selamat Datang, ${decodeURIComponent(namaTamu)}!`;
+        } else {
+            // Jika 'nama' tidak ada, arahkan kembali ke halaman input nama
+            window.location.href = 'input_nama.html';
+        }
+    </script>
 </body>
 
 </html>
